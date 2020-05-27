@@ -25,14 +25,14 @@ https://leetcode.com/problems/3sum/
 https://leetcode.com/problems/subarray-sum-equals-k/
 
 ```python
-def subarraySum(self, nums: List[int], k: int) -> int:
+def subarraySum(self, nums: List[int], m: int) -> int:
     hash_sum = {}
     index_sum = 0
     count = 0
     for i in nums:
         index_sum += i
-        check_sum = index_sum - k
-        if index_sum == k:
+        check_sum = index_sum - m
+        if index_sum == m:
             count += 1
         if check_sum in hash_sum:
             count += hash_sum[check_sum]
