@@ -41,6 +41,12 @@ https://leetcode.com/problems/maximum-depth-of-binary-tree/
 https://leetcode.com/problems/same-tree/
 
 ```python
+def SameTree(self, p: 'TreeNode', q: 'TreeNode') -> 'bool':
+    if p and q:
+        return (p.val == q.val and self.SameTree(p.left, q.left) and
+                self.SameTree(p.right, q.right))
+    else:
+        return p is q
 
 ```
 
