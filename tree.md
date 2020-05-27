@@ -81,6 +81,17 @@ https://leetcode.com/problems/subtree-of-another-tree/
 https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 
 ```python
+def kthSmallest(self, root: TreeNode, k: int) -> int:
+    def inorder(node):
+        if node:
+            yield from inorder(node.left)
+            yield node.val
+            yield from inorder(node.right)
+    for n in inorder(root):
+        if k == 1:
+            return n
+        else:
+            k -= 1
 
 ```
 
