@@ -32,6 +32,17 @@ https://leetcode.com/problems/middle-of-the-linked-list/
 https://leetcode.com/problems/palindrome-linked-list/
 
 ```python
+def isPalindrome(self, head: 'ListNode') -> 'bool':
+    rev = None
+    slow = fast = head
+    while fast and fast.next:
+        fast = fast.next.next
+        slow.next, rev, slow = rev, slow, slow.next
+    if fast:
+        slow = slow.next
+    while rev and rev.val == slow.val:
+        rev, slow = rev.next, slow.next
+    return rev is None
 
 ```
 
